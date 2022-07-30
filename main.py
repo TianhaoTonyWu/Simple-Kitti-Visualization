@@ -4,7 +4,6 @@ from views import *
 import cv2
 import sys
 
-def main():
     # define frame name and get path for each file
     frame = sys.argv[1]
     print("Visualizing frame "+frame)
@@ -40,7 +39,7 @@ def main():
         view_dict=TPV # TPV(third person view), FPV(first person view), BEV(birds eye view)
     )
 
-    #cv2.imwrite(output_path, img)
-    #print("Saved img:", output_path)
-    return img
+    cv2.imwrite(output_path, img)
+    print("Saved img:", output_path)
+
 
