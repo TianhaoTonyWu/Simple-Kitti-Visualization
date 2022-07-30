@@ -40,7 +40,7 @@ def main():
         view_dict=TPV # TPV(third person view), FPV(first person view), BEV(birds eye view)
     )
 
-    cv2.imwrite(output_path, img)
-    print("Saved img:", output_path)
+    #cv2.imwrite(output_path, img)
+    #print("Saved img:", output_path)
     return img
 
