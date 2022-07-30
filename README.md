@@ -3,7 +3,8 @@
 Simple and easy to follow point cloud and bounding box visualizations for kitti data. The only dependencies are OpenCV and Numpy.
 
 Create re-projections onto images and 3 different views of a point-cloud with  a black background (birds eye view, first person view,  third person view).
-
+## TODO:
+Display class label over each box.
 ## Installation
 Clone the repository.
 
