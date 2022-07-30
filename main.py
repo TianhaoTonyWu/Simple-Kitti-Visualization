@@ -2,16 +2,19 @@ from vis_image import vis_image
 from vis_points import vis_points
 from views import *
 import cv2
+import sys
+
 
 # define frame name and get path for each file
-frame = '000032'
+frame = sys.argv[1]
+print("Visualizing frame "+frame)
 img_path = 'data/' + frame + '.png'
 pts_path = 'data/' + frame + '.bin'
 calib_path = 'data/' + frame + '_calib.txt'
 label_path = 'data/' + frame + '_label.txt'
 
 # define output path for image visualisation and create image
-output_path = "output/vis_image.png"
+output_path = "output/vis_image"+sys.argv[1]+".png"
 img = vis_image(
     output_path,
     img_path,
@@ -27,7 +30,7 @@ cv2.imwrite(output_path, img)
 print("Saved img:", output_path)
 
 # define output path for points visualisation and create image
-output_path = "output/vis_points.png"
+output_path = "output/vis_points"+sys.argv[1]+".png"
 img = vis_points(
     output_path,
     pts_path,
