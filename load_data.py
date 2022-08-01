@@ -88,9 +88,9 @@ def read_label(label_path):
         annos = [x.strip("\n") for x in label_file.readlines()]
         for ann in annos:
             ann = ann.split(" ")
+            labels.append(ann[0])
             ann = [float(x) for x in ann[1:15]]
             gt_bboxes_2d.append(ann[3:7])
             gt_bboxes_3d.append(corner_calc(ann[7:]))
-            labels.append(ann[0])
-    
+            
     return gt_bboxes_2d, gt_bboxes_3d, labels
