@@ -22,7 +22,6 @@ def vis_image(
     img = read_img(img_path)
     points = read_pts(pts_path)
     gt_bboxes_2d, gt_bboxes_3d, labels = read_label(label_path)
-    labels = ["Pedestrian", "Pedestrian", "Pedestrian", "Pedestrian", "Pedestrian", "Pedestrian", "Pedestrian", "Pedestrian", "Pedestrian","Pedestrian", "Pedestrian", "Pedestrian","Pedestrian", "Pedestrian", "Pedestrian"]
     print(labels)
     font = cv2.FONT_HERSHEY_SIMPLEX
     intrinsics, extrinsics, lidar2img = read_calib(calib_path)
@@ -41,7 +40,7 @@ def vis_image(
                 lidar_pallet = pallet[:]
                 random.shuffle(lidar_pallet)
             color = lidar_pallet.pop()
-            if labels[label_index] != 'Dontcare': cv2.putText(img, labels[label_index], (label_pos, 30), font, 1, color, 2, cv2.LINE_AA)
+            if labels[label_index] != 'Dontcare': cv2.putText(img, labels[label_index], (label_pos, 30), font, 0.2, color, 2, cv2.LINE_AA)
             label_index += 1
             label_pos += 70
             img = repro_box(img, box, intrinsics, color)
