@@ -42,7 +42,7 @@ def vis_image(
             color = lidar_pallet.pop()
             print(color)
             cv2.putText(img, labels[label_index], (10, label_pos), font, 1, color, 2, cv2.LINE_AA)
-            label_index++
+            label_index += 1
             label_pos += 10
             img = repro_box(img, box, intrinsics, color)
 
