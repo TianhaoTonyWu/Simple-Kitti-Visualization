@@ -23,6 +23,7 @@ def vis_image(
     points = read_pts(pts_path)
     gt_bboxes_2d, gt_bboxes_3d, labels = read_label(label_path)
     print(labels)
+    font = cv2.FONT_HERSHEY_SIMPLEX
     intrinsics, extrinsics, lidar2img = read_calib(calib_path)
     
     # reproject point cloud onto image
@@ -39,7 +40,8 @@ def vis_image(
                 lidar_pallet = pallet[:]
                 random.shuffle(lidar_pallet)
             color = lidar_pallet.pop()
-            cv2.putText(img, labels[label_index], (10, label_pos) color)
+            print(color)
+            cv2.putText(img, labels[label_index], (10, label_pos), font, 1, color, 2, cv2.LINE_AA)
             label_index++
             label_pos += 10
             img = repro_box(img, box, intrinsics, color)
