@@ -22,6 +22,8 @@ def vis_image(
     img = read_img(img_path)
     points = read_pts(pts_path)
     gt_bboxes_2d, gt_bboxes_3d, labels = read_label(label_path)
+    for text in labels:
+        text += "wwwwww"
     print(labels)
     font = cv2.FONT_HERSHEY_SIMPLEX
     intrinsics, extrinsics, lidar2img = read_calib(calib_path)
