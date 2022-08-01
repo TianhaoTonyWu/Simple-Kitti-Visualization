@@ -40,7 +40,6 @@ def vis_image(
                 lidar_pallet = pallet[:]
                 random.shuffle(lidar_pallet)
             color = lidar_pallet.pop()
-            print(color)
             if labels[label_index] != 'Dontcare': cv2.putText(img, labels[label_index], (label_pos, 30), font, 1, color, 2, cv2.LINE_AA)
             label_index += 1
             label_pos += 70
