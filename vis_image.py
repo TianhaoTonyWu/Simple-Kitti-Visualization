@@ -21,7 +21,8 @@ def vis_image(
     # read in input files
     img = read_img(img_path)
     points = read_pts(pts_path)
-    gt_bboxes_2d, gt_bboxes_3d = read_label(label_path)
+    gt_bboxes_2d, gt_bboxes_3d, labels = read_label(label_path)
+    print(labels)
     intrinsics, extrinsics, lidar2img = read_calib(calib_path)
     
     # reproject point cloud onto image
