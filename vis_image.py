@@ -32,11 +32,16 @@ def vis_image(
     # reproject 3d bounding boxes onto image
     if boxes_3d:
         lidar_pallet = []
+        label_index = 0
+        label_pos = 0
         for box in gt_bboxes_3d:
             if len(lidar_pallet) == 0:
                 lidar_pallet = pallet[:]
                 random.shuffle(lidar_pallet)
             color = lidar_pallet.pop()
+            cv2.putText(img, labels[label_index], (10, label_pos) color)
+            label_index++
+            label_pos += 10
             img = repro_box(img, box, intrinsics, color)
 
     # reproject 2d bounding boxes onto image
