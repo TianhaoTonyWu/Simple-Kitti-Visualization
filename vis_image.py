@@ -40,9 +40,9 @@ def vis_image(
                 lidar_pallet = pallet[:]
                 random.shuffle(lidar_pallet)
             color = lidar_pallet.pop()
-            if labels[label_index] != 'Dontcare': cv2.putText(img, labels[label_index], (label_pos, 30), font, 0.2, color, 2, cv2.LINE_AA)
+            if labels[label_index] != 'Dontcare': cv2.putText(img, labels[label_index], (label_pos, 30), font, 0.7, color, 2, cv2.LINE_AA)
             label_index += 1
-            label_pos += 70
+            label_pos += 100
             img = repro_box(img, box, intrinsics, color)
 
     # reproject 2d bounding boxes onto image
