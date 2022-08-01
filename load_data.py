@@ -83,6 +83,7 @@ def corner_calc(bbox):
 def read_label(label_path):
     gt_bboxes_2d = []
     gt_bboxes_3d = []
+    labels = []
     with open(label_path) as label_file:
         annos = [x.strip("\n") for x in label_file.readlines()]
         for ann in annos:
@@ -90,5 +91,6 @@ def read_label(label_path):
             ann = [float(x) for x in ann[1:15]]
             gt_bboxes_2d.append(ann[3:7])
             gt_bboxes_3d.append(corner_calc(ann[7:]))
+            labels.append(ann[0])
     
-    return gt_bboxes_2d, gt_bboxes_3d
+    return gt_bboxes_2d, gt_bboxes_3d, labels
