@@ -18,7 +18,7 @@ def vis_points(
 
     # read in points and bounding boxes
     points = read_pts(pts_path)
-    gt_bboxes_2d, gt_bboxes_3d = read_label(label_path)
+    gt_bboxes_2d, gt_bboxes_3d, labels = read_label(label_path)
     
     # create black background
     IMG_H = 1500
