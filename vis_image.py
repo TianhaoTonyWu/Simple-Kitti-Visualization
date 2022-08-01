@@ -34,14 +34,14 @@ def vis_image(
     if boxes_3d:
         lidar_pallet = []
         label_index = 0
-        label_pos = 50
+        label_pos = 0
         for box in gt_bboxes_3d:
             if len(lidar_pallet) == 0:
                 lidar_pallet = pallet[:]
                 random.shuffle(lidar_pallet)
             color = lidar_pallet.pop()
             print(color)
-            cv2.putText(img, labels[label_index], (label_pos, 10), font, 1, color, 2, cv2.LINE_AA)
+            cv2.putText(img, labels[label_index], (label_pos, 30), font, 1, color, 2, cv2.LINE_AA)
             label_index += 1
             label_pos += 100
             img = repro_box(img, box, intrinsics, color)
